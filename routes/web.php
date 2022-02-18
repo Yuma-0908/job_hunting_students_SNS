@@ -14,3 +14,4 @@
 
 
 Route::get('/', 'CompanyController@index');
+Route::get('/companies/{company}', 'CompanyController@show');
