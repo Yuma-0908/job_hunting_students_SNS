@@ -9,6 +9,6 @@ class CompanyController extends Controller
 {
     public function index(Company $company)
     {
-        return view('index')->with(['companies' => $company->get()]);
+        return view('index')->with(['companies' => $company->getPaginateByLimit()]);
     }
 }

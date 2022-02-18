@@ -12,16 +12,13 @@
         <div class='companies'>
             <div class='company'>
             @foreach ($companies as $company)
-            <p>{{ $company -> id }}</p>
             <h3>{{ $company -> name }}</h3>
             <p>{{ $company -> logo }}</p>
-            <p>{{ $company -> addres }}</p>
-            <p>{{ $company -> potision }}</p>
-            <p>{{ $company -> president }}</p>
-            <p>{{ $company -> capital }}</p>
-            <p>{{ $company -> employees }}</p>
             @endforeach
             </div>
+        </div>
+        <div class='paginate'>
+            {{ $companies->links() }}
         </div>
     </body>
 </html>
