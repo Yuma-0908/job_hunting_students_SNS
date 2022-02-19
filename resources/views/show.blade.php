@@ -17,6 +17,9 @@
             <p>{{ $company -> capital }}</p>
             <p>{{ $company -> employees }}</p>
         </div>
+        <div class='create'>
+            [<a href='/companies/{company}/create'>つぶやき</a>]
+        </div>
         <div class="back">
             [<a href="/">back</a>]
         </div>

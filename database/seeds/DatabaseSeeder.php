@@ -14,5 +14,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SNSTabaleSeeder::class,
         ]);
+        
+        $this->call([
+            CommentSeeder::class,
+        ]);
+        
     }
 }

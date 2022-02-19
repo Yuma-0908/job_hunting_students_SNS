@@ -16,4 +16,9 @@ class CompanyController extends Controller
     {
         return view('show')->with(['company' => $company]);
     }
+    
+    public function create()
+    {
+        return view('create');
+    }
 }
