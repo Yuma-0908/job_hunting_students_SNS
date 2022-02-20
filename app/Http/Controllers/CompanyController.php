@@ -27,4 +27,11 @@ class CompanyController extends Controller
     {
         return view('tweet')->with(['comments' => $comment->getPaginateByLimit()]);
     }
+    
+    public function store(Comment $comment, Request $request)
+    {
+        $input = $request['comment'];
+        $comment->fill($input)->save();
+        return redirect('/comments');
+    }
 }
