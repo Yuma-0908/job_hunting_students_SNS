@@ -14,5 +14,6 @@
 
 
 Route::get('/', 'CompanyController@index');
+Route::get('/comments', 'CompanyController@tweet');
 Route::get('/companies/{company}', 'CompanyController@show');
 Route::get('/companies/{company}/create', 'CompanyController@create');

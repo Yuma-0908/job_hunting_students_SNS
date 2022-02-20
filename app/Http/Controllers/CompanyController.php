@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\Comment;
 
 class CompanyController extends Controller
 {
@@ -20,5 +21,10 @@ class CompanyController extends Controller
     public function create()
     {
         return view('create');
+    }
+    
+    public function tweet(Comment $comment)
+    {
+        return view('tweet')->with(['comments' => $comment->getPaginateByLimit()]);
     }
 }

@@ -8,20 +8,20 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>企業</h1>
-        <div class='companies'>
-            <div class='company'>
-            @foreach ($companies as $company)
-            <a href='/companies/{{ $company -> id }}'><h3>{{ $company -> name }}</h3></a>
-            <p>{{ $company -> logo }}</p>
+        <h1>つぶやき</h1>
+        <div class='comments'>
+            <div class='comment'>
+            @foreach ($comments as $comment)
+                <h3>{{ $comment -> title }}</h3></a>
+                <p>{{ $comment -> body }}</p>
             @endforeach
             </div>
         </div>
         <div class='paginate'>
-            {{ $companies->links() }}
+            {{ $comments->links() }}
         </div>
-        <div class='comments'>
-            [<a href='/comments'>つぶやき一覧</a>]
+        <div class="back">
+            [<a href="/">back</a>]
         </div>
     </body>
 </html>
