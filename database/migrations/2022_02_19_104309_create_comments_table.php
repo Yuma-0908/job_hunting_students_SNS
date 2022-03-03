@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title', 50);
             $table->string('body', 200);
+            $table->integer('company_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

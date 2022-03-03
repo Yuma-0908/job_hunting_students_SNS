@@ -12,10 +12,23 @@
 */
 
 
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/', 'CompanyController@index');
+    #Route::get('/index2', 'CompanyController@index2');
+    Route::get('/comments', 'CompanyController@tweet');
+    Route::get('/companies/{company}', 'CompanyController@show');
+    Route::get('/companies/{company}/create', 'CompanyController@create');
 
-Route::get('/', 'CompanyController@index');
-Route::get('/comments', 'CompanyController@tweet');
-Route::get('/companies/{company}', 'CompanyController@show');
-Route::get('/companies/{company}/create', 'CompanyController@create');
+    Route::post('/comments/{company}', 'CompanyController@store');
+});
+Auth::routes();
 
-Route::post('/comments', 'CompanyController@store');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
