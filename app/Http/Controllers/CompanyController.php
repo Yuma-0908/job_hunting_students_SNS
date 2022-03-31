@@ -26,8 +26,8 @@ class CompanyController extends Controller
             $url,
             ['Bearer' => config('services.yahoo.token')]
         );
-        // API通信で取得したデータはjson形式なので
-        // PHPファイルに対応した連想配列にデコードする
+        // API通信で取得したデータはjson形式
+        // PHPファイルに対応した連想配列にデコード
         $results = json_decode($response->getBody(), true);
         #dd($results["results"]);
         foreach($results["results"]as $result){
